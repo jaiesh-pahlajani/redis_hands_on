@@ -1,22 +1,39 @@
 - Basic commands
 
 · Set Key value (returns OK)
+
 · Get Key (returns the value or nil)
+
 · DEL key1 key2 key3 (To delete a key). (returns number of keys deleted)
+
 · EXISTS key1 key2 (To check a key exist or not). (returns count of keys available)
+
 · TTL key  (To check time to live). (returns time in seconds, -1 if cannot expire, -2 if expired)
+
 · EXPIRE key 10(in seconds). (returns 1)
+
 · PTTL mykey (to check time in millisecond). (same as TTL)
+
 · PEXPIRE mykey 1500 (Time in Milliseconds). (same as EXPIRE)
+
 · PERSIST mykey (Remove EXPIRATION from the key) 
+
 · KEYS a?? (Returns all keys matching pattern)
+
 · RANDOMKEY (Return a random key from the currently selected database)
+
 · RENAME mykey myotherkey
+
 · RENAMENX mykey myotherkey (Renames key to newkey if newkey does not yet exist)
+
 · TOUCH key1 key2 (Alters the last access time of a key(s).
+
 · UNLINK key1 key2 key3 (The actual removal will happen later asynchronously.)
+
 · TYPE key1 (Return Type of Value)
+
 · DUMP mykey (Serialize the value stored at key in a Redis-specific format)
+
 · RESTORE mykey 0 "\n\x17\x17\x00\x00\x00\x12\x00\x00\x00\x03\x00\”
 
 
