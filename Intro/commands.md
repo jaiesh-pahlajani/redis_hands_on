@@ -89,70 +89,101 @@ OK
 
 127.0.0.1:6379> ttl jaiesh
 (integer) 5
+
 127.0.0.1:6379> ttl jaiesh
 (integer) -2
+
 127.0.0.1:6379> get jaiesh
 (nil)
+
 127.0.0.1:6379> ttl 6
 (integer) -2
+
 127.0.0.1:6379> ttl name
 (integer) -1
+
 127.0.0.1:6379> set alexa 1
 OK
+
 127.0.0.1:6379> expire alexa 4
 (integer) 1
+
 127.0.0.1:6379> set alexa 90
 OK
+
 127.0.0.1:6379> pttl alexa 
 (integer) -1
+
 127.0.0.1:6379> expire alexa 4
 (integer) 1
+
 127.0.0.1:6379> pttl alexa 
 (integer) 2006
+
 127.0.0.1:6379> pexpire alexa 10000
 (integer) 0
+
 127.0.0.1:6379> pttl alexa
 (integer) -2
+
 127.0.0.1:6379> ttl aleza
 (integer) -2
+
 127.0.0.1:6379> ttl alexa
 (integer) -2
+
 127.0.0.1:6379> expire alexa 4
 (integer) 0
+
 127.0.0.1:6379> pexpire alexa 10000
 (integer) 0
+
 127.0.0.1:6379> pttl alexa
 (integer) -2
+
 127.0.0.1:6379> set kid 3
 OK
+
 127.0.0.1:6379> pexpire kid 90000
 (integer) 1
+
 127.0.0.1:6379> pttl kid
 (integer) 83881
+
 127.0.0.1:6379> pttl kid
 (integer) 31187
+
 127.0.0.1:6379> persist kid
 (integer) 1
+
 127.0.0.1:6379> ttl kid
 (integer) -1
+
 127.0.0.1:6379> clear
 
 127.0.0.1:6379> set hello 1
 OK
+
 127.0.0.1:6379> get hello
 "1"
+
 127.0.0.1:6379> set hallo 2
 OK
+
 127.0.0.1:6379> set hrllo 3
 OK
+
 127.0.0.1:6379> set heello 2
 OK
+
 127.0.0.1:6379> set hijllo 2
 OK
+
 127.0.0.1:6379> keys h?llo
 1) "hrllo"
 2) "hello"
 3) "hallo"
+
 127.0.0.1:6379> keys *
 1) "hrllo"
 2) "kid"
@@ -161,53 +192,66 @@ OK
 5) "heello"
 6) "name"
 7) "hallo"
+
 127.0.0.1:6379> keys h*llo
 1) "hrllo"
 2) "hello"
 3) "hijllo"
 4) "heello"
 5) "hallo"
+
 127.0.0.1:6379> keys h[ae]llo
 1) "hello"
 2) "hallo"
+
 127.0.0.1:6379> keys h[ee]llo
 1) "hello"
+
 127.0.0.1:6379> keys h[ee][ee]llo
 1) "heello"
+
 127.0.0.1:6379> keys h[^e]llo
 1) "hrllo"
 2) "hallo"
+
 127.0.0.1:6379> keys h[e-r]llo
 1) "hrllo"
 2) "hello"
+
 127.0.0.1:6379> keys *ll*
 1) "hrllo"
 2) "hello"
 3) "hijllo"
 4) "heello"
 5) "hallo"
+
 127.0.0.1:6379> keys h????
 1) "hrllo"
 2) "hello"
 3) "hallo"
+
 127.0.0.1:6379> shutdown save
+
 jaiesh@Jaieshs src % redis-cli
+
 127.0.0.1:6379> get hello
 "1"
+
 127.0.0.1:6379> shutdown nosave
-not connected> exit
-jaiesh@Jaieshs src % get gello
-zsh: command not found: get
+
+
 jaiesh@Jaieshs src % redis-cli
+
 127.0.0.1:6379> get hello
 "1"
+
 127.0.0.1:6379> shutdown nosave
-not connected> exit
+
+
 jaiesh@Jaieshs src % redis-cli
 127.0.0.1:6379> Randomkey
 "hello"
-127.0.0.1:6379> keys
-(error) ERR wrong number of arguments for 'keys' command
+
 127.0.0.1:6379> keys *
 1) "name"
 2) "hello"
@@ -216,22 +260,31 @@ jaiesh@Jaieshs src % redis-cli
 5) "hijllo"
 6) "heello"
 7) "hallo"
+
 127.0.0.1:6379> Randomkey
 "hallo"
+
 127.0.0.1:6379> Randomkey
 "heello"
+
 127.0.0.1:6379> Rename hello 1
 OK
+
 127.0.0.1:6379> get 1
 "1"
+
 127.0.0.1:6379> get hello
 (nil)
+
 127.0.0.1:6379> randomkey
 "name"
+
 127.0.0.1:6379> set 1 yolo
 OK
+
 127.0.0.1:6379> set 2 mofo
 OK
+
 127.0.0.1:6379> rename 1 2
 OK
 
