@@ -41,36 +41,52 @@
 
 127.0.0.1:6379> set 1 hello
 OK
+
 127.0.0.1:6379> get 1
 "hello"
+
 127.0.0.1:6379> set name diwakar
 OK
+
 127.0.0.1:6379> get name
 "diwakar"
+
 127.0.0.1:6379> del 1
 (integer) 1
+
 127.0.0.1:6379> get 1
 (nil)
+
 127.0.0.1:6379> set 1 jello
 OK
+
 127.0.0.1:6379> set 2 lolwa
 OK
+
 127.0.0.1:6379> del 1 2
 (integer) 2
+
 127.0.0.1:6379> get 1 
 (nil)
+
 127.0.0.1:6379> del 1 2 3
 (integer) 0
+
 127.0.0.1:6379> exists 1
 (integer) 0
+
 127.0.0.1:6379> exists name
 (integer) 1
+
 127.0.0.1:6379> exists 1 name
 (integer) 1
+
 127.0.0.1:6379> exists 1
 (integer) 0
+
 127.0.0.1:6379> set jaiesh hello ex 10
 OK
+
 127.0.0.1:6379> ttl jaiesh
 (integer) 5
 127.0.0.1:6379> ttl jaiesh
@@ -218,63 +234,90 @@ OK
 OK
 127.0.0.1:6379> rename 1 2
 OK
+
 127.0.0.1:6379> get 2
 "yolo"
+
 127.0.0.1:6379> set 3 kolo
 OK
+
 127.0.0.1:6379> rename 3 2
 OK
+
 127.0.0.1:6379> get 2
 "kolo"
+
 127.0.0.1:6379> get 2
 "kolo"
+
 127.0.0.1:6379> get 3
 (nil)
+
 127.0.0.1:6379> set 3 hahaha
 OK
+
 127.0.0.1:6379> renamenx 3 2
 (integer) 0
+
 127.0.0.1:6379> get 3
 "hahaha"
+
 127.0.0.1:6379> get 2
 "kolo"
+
 127.0.0.1:6379> renamenx 3 dudewa
 (integer) 1
+
 127.0.0.1:6379> get 3
 (nil)
+
 127.0.0.1:6379> get dudwa
 (nil)
+
 127.0.0.1:6379> touch dudewa
 (integer) 1
+
 127.0.0.1:6379> unlink dudwa
 (integer) 0
+
 127.0.0.1:6379> get dudewa
 "hahaha"
+
 127.0.0.1:6379> unlink dudwa
 (integer) 0
+
 127.0.0.1:6379> unlink dudewa
 (integer) 1
+
 127.0.0.1:6379> get dudewa
 (nil)
+
 127.0.0.1:6379> type 1
 none
+
 127.0.0.1:6379> type 2
 string
-127.0.0.1:6379> clear
 
 127.0.0.1:6379> set hooli 3
 OK
+
 127.0.0.1:6379> dump hooli
 "\x00\xc0\x03\t\x00\xe1h\xa1\xbe\x85\x03\x0f\x8e"
+
 127.0.0.1:6379> restore hooli 0 "\x00\xc0\x03\t\x00\xe1h\xa1\xbe\x85\x03\x0f\x8e"
 (error) BUSYKEY Target key name already exists.
+
 127.0.0.1:6379> restore hooli 0 "\x00\xc0\x03\t\x00\xe1h\xa1\xbe\x85\x03\x0f\x8e" REPLACE
 OK
+
 127.0.0.1:6379> del hoolo
 (integer) 0
+
 127.0.0.1:6379> del hooli
 (integer) 1
+
 127.0.0.1:6379> restore hooli 0 "\x00\xc0\x03\t\x00\xe1h\xa1\xbe\x85\x03\x0f\x8e"
 OK
+
 127.0.0.1:6379> get hooli
 "3"
